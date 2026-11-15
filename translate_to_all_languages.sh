@@ -14,7 +14,7 @@ num_parts=$1
 
 # skip bhojpuri because educated speakers likely prefer hindi
 # skip javanese because educated speakers likely prefer indonesian
-for lang in arabic bengali chinese french german gujarati hausa hindi indonesian italian japanese korean marathi nepali punjabi russian spanish swahili tamil telugu turkish urdu vietnamese yoruba; do 
+for lang in arabic bengali chinese french german greek gujarati hausa hindi indonesian italian japanese kannada kashmiri korean marathi nepali persian polish portuguese russian spanish swahili tamil telugu tibetan thai turkish urdu vietnamese yoruba; do 
   echo
   if [ -d $lang ]; then
     echo "Skipping $lang because $(pwd)/$lang already exists"
