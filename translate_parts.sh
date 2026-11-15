@@ -2,21 +2,30 @@
 set -euo pipefail
 
 {
-dir=`dirname $0`
+dir="$(dirname "$0")"
 lang=$1
 shift
 parts_to_redo=$@
 
-mkdir -p $lang
+if [ $# -lt 1 ]; then
+  echo "Usage: translate_parts.sh <language> <part-number> <part-number> ..."
+  echo "Example: translate_parts.sh hindi {1..6}"
+  exit 1
+fi
 
-# todo: run each part in parallel (using background tasks, [xargs -P] or GNU parallel)
+echo "I will read english files named part<n>.txt from $(pwd)"
+echo "And I will write the translated output here:     $(pwd)/$lang/"
+echo
+mkdir -p "$lang"
+
 for i in $parts_to_redo; do 
 	echo Translating part$i to $lang...
-	time ../query_openai.py ../prompt_translate_to_$lang.txt part$i.txt $lang/part$i.txt
-	grep NOTE $lang/part$i.txt
+	time ($dir/query_openai.py $dir/prompts/translate_to_$lang.txt part$i.txt $lang/part$i.txt; grep NOTE $lang/part$i.txt || true) &
 done
 
-$dir/concatenate_parts.sh $lang > $lang/$lang.txt
+wait
+
+$dir/concatenate_parts.sh $lang > $lang/$lang.vtt
 
 exit 0
 }
