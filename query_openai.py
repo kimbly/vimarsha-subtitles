@@ -27,7 +27,7 @@ def main():
     # Query OpenAI
     print(f"Querying openai with {len(input)} bytes...")
     response = client.chat.completions.create(
-        model="gpt-5-mini",  # "gpt-5", "gpt-5-mini", etc
+        model="gpt-6-luna",  # "gpt-5", "gpt-5-mini", etc
         messages=[
             {"role": "system", "content": prompt},
             {"role": "user", "content": input}
