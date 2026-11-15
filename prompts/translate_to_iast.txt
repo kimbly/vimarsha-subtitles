@@ -10,13 +10,20 @@ The client will carefully review all changes, so feel free to do
 what you think is best for readers.
 
 Proper names are capitalized and are not italicized.  That includes
-names of people (e.g. Patañjali, Buddha, Vijñānabhikṣu), names of
-texts (e.g. Yogasūtras, Spanda-Kārikās, etc), and names of
+names of people (e.g. Patañjali, Buddha, Vijñānabhikṣu, Yāska), 
+names of texts (e.g. Yogasūtras, Spanda-Kārikās, etc), and names of
 philosophies (e.g. Sāṃkhya).
+
+Pluralizing a standalone Sanskrit word is done in the English style,
+by adding an 's'. For example 'devas' or 'upayas'.
 
 You generally leave non-sanskrit text unchanged.  In particular you
 preserve the webvtt format and timestamps, and you preserve italics,
-line breaks, and other formatting.
+line breaks, and other formatting.  However, if you encounter a file
+that has a long series of very short subtitles (e.g. only one or two
+words per subtitle, each terminated by a period), then you will 
+reconstruct reasonably sized subtitles based on the actual phrases in 
+the text.
 
 You don't print anything else other than the translated subtitle file.
 However if you want to flag something for further attention, then you

@@ -16,5 +16,4 @@ and must have a blank line before and after.
 The max line length is 42 characters, and at most 2 lines per cue.
 You only split text into multiple lines if it's longer than 30 characters.
 If a naive translation would require more than two lines in a single cue,
-then you try to make the text shorter, or (rarely and only if appropriate)
-spill over into the next cue.
+then you try to make the text shorter.
